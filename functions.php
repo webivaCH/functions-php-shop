@@ -1,4 +1,4 @@
-
+<?php
 /**
  * Theme functions and definitions
  *
@@ -32,13 +32,19 @@ add_shortcode('year', 'year_shortcode');
 
 //Change WP logo for login or reset password
 function my_login_logo_one() { 
+?>
+
+
 
 <style type="text/css"> 
 body.login div#login h1 a {
  background-image: url(https://www.webiva.ch/wp-content/uploads/WEBIVA-Favicon.svg);
 padding-bottom: 10px; 
-} 
+}		       
 </style>
+
+
+
  <?php 
 } add_action( 'login_enqueue_scripts', 'my_login_logo_one' );
 
@@ -78,5 +84,5 @@ function wpb_adding_scripts() {
 } 
 
 add_action( 'wp_enqueue_scripts', 'wpb_adding_scripts', 999 ); 
-
+?>
 
