@@ -30,23 +30,8 @@ function year_shortcode() {
 }
 add_shortcode('year', 'year_shortcode');
 
-//Change WP logo for login or reset password
-function my_login_logo_one() { 
-?>
 
-
-
-<style type="text/css"> 
-body.login div#login h1 a {
- background-image: url(https://www.webiva.ch/wp-content/uploads/WEBIVA-Favicon.svg);
-padding-bottom: 10px; 
-}		       
-</style>
-
-
-
- <?php 
-} add_action( 'login_enqueue_scripts', 'my_login_logo_one' );
+add_action( 'login_enqueue_scripts', 'my_login_logo_one' );
 
 /**
  * Custom admin login header link
@@ -83,6 +68,21 @@ function wpb_adding_scripts() {
     wp_enqueue_script('my_amazing_script');
 } 
 
+
+
 add_action( 'wp_enqueue_scripts', 'wpb_adding_scripts', 999 ); 
+
+//Change WP logo for login or reset password
+function my_login_logo_one() { 
+	<style type="text/css"> 
+	body.login div#login h1 a {
+	 background-image: url(https://www.webiva.ch/wp-content/uploads/WEBIVA-Favicon.svg);
+	padding-bottom: 10px; 
+	}		       
+	</style>
+}
+			       
 ?>
+
+
 
