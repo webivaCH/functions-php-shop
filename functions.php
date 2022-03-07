@@ -66,3 +66,17 @@ function remove_menus(){
 	remove_menu_page( 'elementor' ); // Elementor
 }
 add_action( 'admin_menu', 'remove_menus' , 100 );
+
+// puzzle to 404 page
+//https://codepen.io/onge/pen/LEzGRG
+
+function wpb_adding_scripts() {
+	  wp_enqueue_style( 'parent-style', get_stylesheet_directory_uri() . '/puzzle.css');
+
+    wp_register_script('my_amazing_script', get_stylesheet_directory_uri() . '/puzzle.js', array('jquery'),'1.1', true);
+    wp_enqueue_script('my_amazing_script');
+} 
+
+add_action( 'wp_enqueue_scripts', 'wpb_adding_scripts', 999 ); 
+
+
