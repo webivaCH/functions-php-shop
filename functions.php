@@ -1,4 +1,4 @@
-
+<?php
 /**
  * Theme functions and definitions
  *
@@ -74,14 +74,16 @@ add_action( 'wp_enqueue_scripts', 'wpb_adding_scripts', 999 );
 
 //Change WP logo for login or reset password
 function my_login_logo_one() { 
+?>
 	<style type="text/css"> 
 	body.login div#login h1 a {
 	 background-image: url(https://www.webiva.ch/wp-content/uploads/WEBIVA-Favicon.svg);
 	padding-bottom: 10px; 
 	}		       
 	</style>
+<?php
 }
-			       
+?>		       
 
 
 
