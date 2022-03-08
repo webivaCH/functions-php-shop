@@ -1,4 +1,4 @@
-<?php
+
 /**
  * Theme functions and definitions
  *
@@ -82,7 +82,7 @@ function my_login_logo_one() {
 	</style>
 }
 			       
-?>
+
 
 
 
