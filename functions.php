@@ -59,6 +59,7 @@ function remove_menus(){
 	if( !in_array('contributor',$roles)){
 	return;
 	}
+	
 
 	$ptype = 'elementor_library';
 	
