@@ -170,6 +170,12 @@ function change_variable_products_price_display( $price, $product ) {
     return apply_filters( 'woocommerce_variable_price_html', $prefix . wc_price( $min_price ) . $product->get_price_suffix(), $product );
 }
 
+//Removes links
+add_filter( 'woocommerce_product_is_visible','product_invisible');
+function product_invisible(){
+    return false;
+}
+
 // remove single product page link
 remove_action( 'woocommerce_before_shop_loop_item','woocommerce_template_loop_product_link_open', 10 );
 remove_action( 'woocommerce_after_shop_loop_item','woocommerce_template_loop_product_link_close', 5 );
