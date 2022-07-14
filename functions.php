@@ -169,3 +169,15 @@ function change_variable_products_price_display( $price, $product ) {
 
     return apply_filters( 'woocommerce_variable_price_html', $prefix . wc_price( $min_price ) . $product->get_price_suffix(), $product );
 }
+
+// remove single product page link
+remove_action( 'woocommerce_before_shop_loop_item','woocommerce_template_loop_product_link_open', 10 );
+remove_action( 'woocommerce_after_shop_loop_item','woocommerce_template_loop_product_link_close', 5 );
+
+// hide single product page completely
+add_filter( 'woocommerce_register_post_type_product','hide_product_page',12,1);
+function hide_product_page($args){
+  $args["publicly_queryable"]=false;
+  $args["public"]=false;
+  return $args;
+}
