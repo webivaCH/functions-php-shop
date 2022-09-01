@@ -190,3 +190,5 @@ function hide_product_page($args){
 
 // Hides default woocommerce notice when product added to cart
 add_filter( 'wc_add_to_cart_message_html', '__return_false' );
+// Hides default woocommerce notice when product removed from cart
+add_filter( 'woocommerce_cart_item_removed_notice_type', '__return_false' );
