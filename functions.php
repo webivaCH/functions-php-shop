@@ -187,3 +187,6 @@ function hide_product_page($args){
   $args["public"]=false;
   return $args;
 }
+
+// Hides default woocommerce notice when product added to cart
+add_filter( 'wc_add_to_cart_message_html', '__return_false' );
