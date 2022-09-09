@@ -193,11 +193,11 @@ add_filter( 'wc_add_to_cart_message_html', '__return_false' );
 // Hides default woocommerce notice when product removed from cart
 add_filter( 'woocommerce_cart_item_removed_notice_type', '__return_false' );
 
-// /**
-//  * Redirect to Checkout Page after Add to Cart @ WooCommerce
-//  */
-// add_filter( 'woocommerce_add_to_cart_redirect', 'webiva_skip_cart_redirect_checkout' );
+/**
+ * Redirect to Checkout Page after Add to Cart @ WooCommerce
+ */
+add_filter( 'woocommerce_add_to_cart_redirect', 'webiva_skip_cart_redirect_checkout' );
  
-// function webiva_skip_cart_redirect_checkout( $url ) {
-// 	return wc_get_checkout_url();
-// }
+function webiva_skip_cart_redirect_checkout( $url ) {
+	return wc_get_checkout_url();
+}
